@@ -81,3 +81,28 @@ th {
 td {
     background-color: #ffffff;
 }
+
+
+/* ЛАБОРАТОРНА 4: КОМБІНАТОРИ (СЕЛЕКТОРИ)*/
+
+/* 1. Контекстний селектор (пробіл)  */
+.skills-block li {
+    font-style: italic;
+    color: #34495e;
+}
+
+/* 2. Дочірній селектор  */
+.main-list > li {
+    font-weight: bold;
+    font-size: 20px;
+    color: #2980b9; 
+    font-style: normal; 
+}
+
+/* 3. Сусідній селектор*/
+ul.main-list + p {
+    background-color: #f1c40f;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
