@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="author" content="Дмитро">
     <title>Головна - Огляд відеоігор</title>
-</head>
-<body bgcolor="#f4f4f9" link="#0000ee" vlink="#551a8b" alink="#ff0000">
     
-    <h1>Вітаю на моєму ігровому блозі!</h1>
+    <link rel="stylesheet" href="style.css">
 
+    <style>
+        a {
+            color: #8e44ad;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Вітаю на моєму ігровому блозі!</h1>
     <nav>
         <a href="index.html">Головна</a> |
         <a href="terraria.html">Огляд Terraria</a> |
@@ -17,16 +24,19 @@
     </nav>
     <hr>
 
-    <h2>Про цей сайт</h2>
-    <p>Це моя <b>друга лабораторна робота</b> з вивчення <i>основ HTML</i>. Тут я зібрав короткі огляди на ігри, в які люблю грати.</p>
+    <div id="unique-block">
+        <h2>Про цей сайт</h2>
+        <p style="color: green; text-align: right; font-size: 20px;">
+            Це моя третя лабораторна робота. Цей текст має зелений колір завдяки внутрішньому стилю.
+        </p>
+        <p>Перейти до розділу <a href="terraria.html#bosses">Боси у Terraria</a>.</p>
+        <p>Відвідати <a href="https://kpi.ua" target="_blank">офіційний сайт КПІ</a>.</p>
+    </div>
 
-    <p>Перейти до розділу <a href="terraria.html#bosses">Боси у Terraria</a> (посилання на певний рядок іншої сторінки).</p>
-    <p>Відвідати <a href="https://kpi.ua" target="_blank">офіційний сайт КПІ</a> (посилання в інтернет).</p>
+    <p class="important-text">Цей текст завжди буде червоним, бо в CSS використано правило !important.</p>
 
     <hr>
     <h2>Плаваючий фрейм (iframe)</h2>
-    <p>Нижче вбудовано сторінку з Вікіпедії:</p>
     <iframe src="https://uk.wikipedia.org/wiki/Terraria" width="800" height="400"></iframe>
-
 </body>
 </html>
