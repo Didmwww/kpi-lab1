@@ -3,69 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Дмитро">
-    <title>Про автора — Ігровий Блог</title>
+    <title>Про автора</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <a href="index.html">Головна</a>
-        <a href="terraria.html">Огляд Terraria</a>
-        <a href="ostriv.html">Огляд Ostriv</a>
-        <a href="about.html">Про автора</a>
-    </nav>
+<nav>
+    <a href="index.html">Головна</a>
+    <a href="terraria.html">Огляд Terraria</a>
+    <a href="ostriv.html">Огляд Ostriv</a>
+    <a href="about.html">Про автора</a>
+</nav>
 
-    <div class="main-wrapper clearfix">
+<div class="main-wrapper clearfix">
+    <aside class="sidebar">
+        <h3>DOM Властивості</h3>
+        <button onclick="loadDevData()">Завантажити дані автора</button>
+    </aside>
+
+    <div class="content-area">
+        <h1>Інформація про розробника</h1>
         
-        <aside class="sidebar">
-            <h3>Контакти</h3>
-            <p><span class="game-tag">Discord</span> didmwww#0000</p>
-            <p><span class="game-tag">GitHub</span> Didmwww</p>
-            <p><span class="game-tag">Місто</span> Київ</p>
-            <hr>
-            <p>Завжди відкритий до обговорення нових механік у Terraria чи стратегій в Ostriv.</p>
-        </aside>
+        <p id="info-text">Тут з'являться дані (перевірка DOM властивостей).</p>
+        <div id="dev-card"></div> <script>
+            function loadDevData() {
+                // Виклик власної функції з параметрами
+                showDevInfo("Осадчий", "Дмитро");
 
-        <div class="content-area">
-            <h1>Інформація про розробника</h1>
+                const node = document.getElementById('info-text');
+
+                // Робота з nodeValue / data
+                node.firstChild.data = "Дані успішно оновлено!";
+
+                // Перевірка textContent, innerHTML, outerHTML у консолі
+                console.log("textContent:", node.textContent);
+                console.log("innerHTML:", node.innerHTML);
+                console.log("outerHTML:", node.outerHTML);
+            }
+        </script>
+
+        <hr>
+        <h2>Мій ігровий та робочий графік</h2>
+        
+        <table border="1" cellspacing="5" cellpadding="10" width="100%">
+            <colgroup>
+                <col style="background-color: #ffcccc;">
+                <col span="2" style="background-color: #ccffcc;">
+            </colgroup>
             
-            <p>Мене звати Дмитро. Я студент 2 курсу ФІОТ, який поєднує навчання з глибоким інтересом до геймдизайну та розробки програмного забезпечення.</p>
+            <tr align="center">
+                <th colspan="3" bgcolor="#9999ff">Розподіл ігрових активностей</th>
+            </tr>
+            <tr align="left">
+                <th>День</th>
+                <th>Місія / Локація</th>
+                <th>Тип активності</th>
+            </tr>
+            <tr>
+                <td rowspan="2" valign="middle" align="center"><b>Понеділок</b></td>
+                <td>Захист поселення від Навали Слизнів</td>
+                <td align="right">Бойовий рейд (Terraria)</td>
+            </tr>
+            <tr>
+                <td>Планування та розбудова цегельні</td>
+                <td align="right">Економічна стратегія (Острів)</td>
+            </tr>
+        </table>
 
-            <p>Окрім ігор, я захоплююсь програмуванням на <span class="game-tag">Python</span> та створюю власні Telegram-боти. Цей сайт — мій спосіб систематизувати знання з клієнтської розробки та поділитися улюбленими іграми.</p>
-
-            <hr>
-
-            <h2>Мій ігровий та робочий графік</h2>
-            <p>Для балансу між навчанням та відпочинком я використовую чітке планування ігрових сесій:</p>
-
-            <table border="1" cellspacing="5" cellpadding="10">
-                <colgroup>
-                    <col style="background-color: #ffcccc;">
-                    <col span="2" style="background-color: #ccffcc;">
-                </colgroup>
-                
-                <tr align="center">
-                    <th colspan="3" bgcolor="#9999ff">Розподіл ігрових активностей</th>
-                </tr>
-                <tr align="left">
-                    <th>День</th>
-                    <th>Місія / Локація</th>
-                    <th>Тип активності</th>
-                </tr>
-                <tr>
-                    <td rowspan="2" valign="middle" align="center"><b>Понеділок</b></td>
-                    <td>Захист поселення від Навали Слизнів</td>
-                    <td align="right">Бойовий рейд (Terraria)</td>
-                </tr>
-                <tr>
-                    <td>Планування та розбудова цегельні</td>
-                    <td align="right">Економічна стратегія (Острів)</td>
-                </tr>
-            </table>
-
-            <p><i>Примітка: Графік може змінюватися залежно від виходу нових патчів або складності лабораторних робіт.</i></p>
-        </div>
     </div>
+</div>
 
+<script src="script.js"></script>
 </body>
 </html>

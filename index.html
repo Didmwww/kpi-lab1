@@ -2,6 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Дмитро">
     <title>Ігровий щоденник - Головна</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,27 +16,50 @@
 </nav>
 
 <div class="main-wrapper clearfix">
+    <script>
+        alert("Вітаємо на головній сторінці ігрового блогу!");
+        let isReady = confirm("Бажаєте активувати інтерактивні функції сайту?");
+    </script>
+
     <header>
         <h1>Вітаю на моєму ігровому блозі!</h1>
     </header>
 
     <aside class="sidebar">
+        <h3>Інтерактив (JS)</h3>
+        <button onclick="startUserDialogue()">Діалог з автором</button><br><br>
+        <button onclick="compareStrings()">Порівняти ігри</button><br><br>
+        <button onclick="redirectToProject()">Мій GitHub</button>
+        
+        <hr>
         <h3>Останні новини</h3>
-        <p><span class="game-tag">New</span> Вийшов патч для Ostriv! Покращено логістику сіна.</p>
-        <p><span class="game-tag">Update</span> Terraria отримала міні-оновлення з новими предметами.</p>
+        <p><span class="game-tag">New</span> Вийшов патч для Ostriv!</p>
     </aside>
 
     <div class="content-area">
-        <p>Ласкаво просимо до мого куточку ігрових оглядів. Цей сайт створено для того, щоб ділитися корисними порадами та враженнями від найкращих інді-проектів сучасності.</p>
+        <p>Ласкаво просимо! Цей сайт присвячений моєму захопленню відеоіграми. Тут я публікую огляди, корисні посилання та власні враження від проходження улюблених проектів.</p>
+
+        <script>
+            const originalBg = document.body.style.backgroundColor;
+            document.body.style.backgroundColor = "#e8f8f5"; // Тимчасовий світло-зелений фон
+            setTimeout(() => {
+                document.body.style.backgroundColor = originalBg;
+            }, 30000);
+        </script>
+
+        <p>Шукаєте тактику на босів? Перейдіть до розділу <a href="terraria.html#bosses">Боси у Terraria</a>.</p>
         
-        <h2>Чому я обрав ці ігри?</h2>
-        <p>Terraria та Ostriv — це приклади ігор з душею. Одна занурює у нескінченні пригоди, інша — у затишну атмосферу українського минулого.</p>
+        <hr>
+        <h3>Довідкова інформація про ігри (Вікіпедія):</h3>
+        <iframe src="https://uk.wikipedia.org/wiki/Terraria" width="100%" height="400" style="border:none;"></iframe>
 
         <hr>
-        <h3>Офіційний трейлер Terraria</h3>
-        <iframe src="https://uk.wikipedia.org/wiki/Terraria" width="100%" height="400" style="border:none;"></iframe>
+        <script>
+            document.write("<p style='color: gray; font-size: 0.9em; text-align: center;'>Сторінку згенеровано: " + new Date().toLocaleString() + "</p>");
+        </script>
     </div>
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>

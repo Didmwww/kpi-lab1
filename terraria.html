@@ -3,66 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Дмитро">
-    <title>Огляд Terraria — Ігровий Блог</title>
+    <title>Огляд Terraria</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <a href="index.html">Головна</a>
-        <a href="terraria.html">Огляд Terraria</a>
-        <a href="ostriv.html">Огляд Острів</a>
-        <a href="about.html">Про автора</a>
-    </nav>
+<nav>
+    <a href="index.html">Головна</a>
+    <a href="terraria.html">Огляд Terraria</a>
+    <a href="ostriv.html">Огляд Ostriv</a>
+    <a href="about.html">Про автора</a>
+</nav>
 
-    <div class="main-wrapper clearfix">
+<div class="main-wrapper clearfix">
+    <aside class="sidebar">
+        <h3>Швидкі факти</h3>
+        <p><span class="game-tag">Жанр</span> Sandbox</p>
+        <p><span class="game-tag">Рейтинг</span> 10/10</p>
+        <hr>
+        <button id="dom-btn" style="background:#e67e22; color:white; padding:10px; border:none; cursor:pointer;">Модифікувати DOM</button>
+    </aside>
+
+    <div class="content-area">
+        <h1 id="top">Terraria: Більше, ніж просто 2D Minecraft</h1>
         
-        <aside class="sidebar">
-            <h3>Швидкі факти</h3>
-            <p><span class="game-tag">Жанр</span> Action-adventure, Sandbox</p>
-            <p><span class="game-tag">Платформи</span> PC, Console, Mobile</p>
-            <p><span class="game-tag">Рейтинг</span> 10/10 (Steam)</p>
-        </aside>
+        <p>Перейти одразу до розділу <a href="#bosses">Боси</a>.</p>
 
-        <div class="content-area">
-            <h1 id="top">Terraria: Більше, ніж просто 2D Minecraft</h1>
-            
-            <p>Перейти одразу до розділу <a href="#bosses">Боси</a> (якірне посилання).</p>
-
-            <hr>
-
-            <h2>Особливості гри:</h2>
-            
-            <p><b>Основні механіки (ol):</b></p>
-            <ol type="I"> 
-                <li><span class="game-tag">Дослідження</span> процедурно генерованого світу</li>
-                <li><span class="game-tag">Будівництво</span> баз та житла для NPC</li>
-                <li><span class="game-tag">Битви</span> з монстрами та босами</li>
-            </ol>
-
-            <p><b>Чому гра затягує (ul):</b></p>
-            <ul type="square"> 
-                <li>Сотні видів унікальної зброї</li>
-                <li>Надзвичайно складна система крафту</li>
-                <li>Різноманітні та небезпечні біоми</li>
-            </ul>
-
-            <p><b>Базові поняття (dl):</b></p>
-            <dl>
-                <dt>Біом</dt>
-                <dd>Сукупність екосистем однієї природно-кліматичної зони у грі (наприклад, Джунглі або Пурпур).</dd>
-                <dt>Крафт</dt>
-                <dd>Процес створення нових предметів з базових матеріалів на спеціальних робочих місцях.</dd>
-            </dl>
-
-            <hr>
-
-            <h2 id="bosses">Головні Боси</h2>
-            <p>У грі безліч босів, від Ока Ктулху до Місячного Лорда. Кожен з них вимагає своєї тактики, спеціальної арени та відповідного спорядження.</p>
-
-            <p style="text-align: right;"><a href="#top">Повернутися нагору ↑</a></p>
+        <div id="action-box">
+            <p id="target-p"><i>Цей абзац буде замінено за допомогою JavaScript (replaceWith).</i></p>
         </div>
-    </div>
 
+        <script>
+            document.getElementById('dom-btn').onclick = function() {
+                // querySelectorAll: змінюємо колір маркованого списку
+                const listItems = document.querySelectorAll('.ul-list li');
+                listItems.forEach(li => li.style.color = '#d35400');
+
+                const box = document.getElementById('action-box');
+
+                // createElement + createTextNode
+                const newTag = document.createElement('span');
+                const tagText = document.createTextNode(' [ОНОВЛЕНО] ');
+                newTag.style.fontWeight = 'bold';
+                newTag.style.color = '#27ae60';
+                newTag.append(tagText);
+
+                // Методи вставки: prepend, append, after
+                box.prepend("Увага: "); 
+                box.append(newTag);
+                
+                const afterMsg = document.createElement('p');
+                afterMsg.textContent = "Terraria виходить на новий рівень, бета мод Terraria 3D тепер у відкритому доступі для всіх гравців";
+                box.after(afterMsg);
+
+                // replaceWith
+                const oldPara = document.getElementById('target-p');
+                const newPara = document.createElement('p');
+                newPara.innerHTML = "<b>Текст замінено через DOM-метод!</b>";
+                oldPara.replaceWith(newPara);
+
+                // remove
+                this.remove(); 
+            };
+        </script>
+
+        <hr>
+        <h2>Особливості гри:</h2>
+        
+        <p><b>Основні механіки (ol):</b></p>
+        <ol type="I"> 
+            <li><span class="game-tag">Дослідження</span> процедурно генерованого світу</li>
+            <li><span class="game-tag">Будівництво</span> баз та житла для NPC</li>
+            <li><span class="game-tag">Битви</span> з монстрами та босами</li>
+        </ol>
+
+        <p><b>Чому гра затягує (ul):</b></p>
+        <ul type="square" class="ul-list"> 
+            <li>Сотні видів унікальної зброї</li>
+            <li>Надзвичайно складна система крафту</li>
+            <li>Різноманітні та небезпечні біоми</li>
+        </ul>
+
+        <p><b>Базові поняття (dl):</b></p>
+        <dl>
+            <dt>Біом</dt>
+            <dd>Сукупність екосистем однієї природно-кліматичної зони у грі.</dd>
+            <dt>Крафт</dt>
+            <dd>Процес створення нових предметів з базових матеріалів.</dd>
+        </dl>
+
+        <hr>
+        <h2 id="bosses">Головні Боси</h2>
+        <p>У грі безліч босів, від Ока Ктулху до Місячного Лорда. Кожен вимагає своєї тактики.</p>
+        <p style="text-align: right;"><a href="#top">Повернутися нагору ↑</a></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
