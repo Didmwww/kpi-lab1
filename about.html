@@ -15,6 +15,10 @@
     <a href="about.html">Про автора</a>
 </nav>
 
+<div id="drag-item" style="width: 120px; height: 120px; background-color: #2980b9; color: white; display: flex; align-items: center; justify-content: center; text-align: center; position: absolute; top: 120px; right: 50px; cursor: grab; border-radius: 10px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.3); font-weight: bold; user-select: none;">
+    Перетягни мене<br>(Drag & Drop)
+</div>
+
 <div class="main-wrapper clearfix">
     <aside class="sidebar">
         <h3>DOM Властивості</h3>
@@ -29,15 +33,9 @@
 
         <script>
             function loadDevData() {
-                // Виклик власної функції з параметрами
                 showDevInfo("Осадчий", "Дмитро");
-
                 const node = document.getElementById('info-text');
-
-                // Робота з nodeValue / data
                 node.firstChild.data = "Дані успішно оновлено!";
-
-                // Перевірка textContent, innerHTML, outerHTML у консолі
                 console.log("textContent:", node.textContent);
                 console.log("innerHTML:", node.innerHTML);
                 console.log("outerHTML:", node.outerHTML);
@@ -45,7 +43,7 @@
         </script>
 
         <hr>
-        <h2>Експерименти з подіями (Лаб 7)</h2>
+        <h2>Експерименти з подіями</h2>
         <div style="background: #ecf0f1; padding: 15px; border-radius: 5px;">
             <p><b>1. Способи призначення:</b></p>
             <button onclick="attrHandler()">Через атрибут (onclick)</button>
@@ -60,6 +58,16 @@
             <br><br>
             <p><b>3. Патерн "Поведінка" (Клікніть, щоб збільшити):</b></p>
             <button data-behavior="counter" style="font-size: 1.2em; padding: 5px 20px;">0</button>
+        </div>
+
+        <hr>
+        <h2>Події миші</h2>
+        <div id="hover-zone" style="padding: 20px; background: #e8f4f8; border: 2px dashed #2980b9; border-radius: 8px;">
+            <p>Наведіть вказівник миші на елементи нижче. Слідкуйте за зміною стилів та інформацією під ними:</p>
+            <button class="hover-item" style="padding: 10px;">Елемент 1 (Button)</button>
+            <button class="hover-item" style="padding: 10px;">Елемент 2 (Button)</button>
+            <span class="hover-item" style="padding: 10px; background: #fff; border: 1px solid #ccc; display: inline-block;">Елемент 3 (Span)</span>
+            <div id="hover-info" style="margin-top: 15px; font-weight: bold; color: #c0392b; min-height: 24px;">Вказівник очікує...</div>
         </div>
 
         <hr>
