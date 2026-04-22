@@ -12,8 +12,6 @@ h1, h2 {
     text-align: center; 
 }
 
-/* --- ЛАБОРАТОРНА 5: ПОЗИЦІОНУВАННЯ ТА ПСЕВДОЕЛЕМЕНТИ --- */
-
 /* Контейнер для всього сайту */
 .main-wrapper {
     width: 90%;
@@ -96,4 +94,14 @@ h2::before {
     content: "";
     display: table;
     clear: both;
+}
+
+/* --- ЛАБОРАТОРНА 7: СТИЛІ ДЛЯ ПОДІЙ --- */
+.highlight {
+    background-color: #f1c40f;
+    font-weight: bold;
+    color: #2c3e50 !important; /* Важливо, щоб перебити старі стилі */
+    padding: 2px 5px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
 }

@@ -25,7 +25,9 @@
         <h1>Інформація про розробника</h1>
         
         <p id="info-text">Тут з'являться дані (перевірка DOM властивостей).</p>
-        <div id="dev-card"></div> <script>
+        <div id="dev-card"></div> 
+
+        <script>
             function loadDevData() {
                 // Виклик власної функції з параметрами
                 showDevInfo("Осадчий", "Дмитро");
@@ -41,6 +43,24 @@
                 console.log("outerHTML:", node.outerHTML);
             }
         </script>
+
+        <hr>
+        <h2>Експерименти з подіями (Лаб 7)</h2>
+        <div style="background: #ecf0f1; padding: 15px; border-radius: 5px;">
+            <p><b>1. Способи призначення:</b></p>
+            <button onclick="attrHandler()">Через атрибут (onclick)</button>
+            <button id="prop-btn">Через властивість (DOM)</button>
+            <button id="multi-btn">Кілька обробників (addEventListener)</button>
+            
+            <br><br>
+            <p><b>2. Об'єкт як обробник (handleEvent):</b></p>
+            <button id="obj-btn">Додати об'єкт-обробник</button>
+            <button id="remove-obj-btn">Видалити об'єкт-обробник</button>
+            
+            <br><br>
+            <p><b>3. Патерн "Поведінка" (Клікніть, щоб збільшити):</b></p>
+            <button data-behavior="counter" style="font-size: 1.2em; padding: 5px 20px;">0</button>
+        </div>
 
         <hr>
         <h2>Мій ігровий та робочий графік</h2>
@@ -69,7 +89,6 @@
                 <td align="right">Економічна стратегія (Острів)</td>
             </tr>
         </table>
-
     </div>
 </div>
 
