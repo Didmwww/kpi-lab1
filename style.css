@@ -23,7 +23,7 @@ h1, h2 {
 /* Фіксоване меню (Position) */
 nav {
     position: sticky;
-    top: 0;
+    top: 0; 
     z-index: 1000;
     background-color: #2c3e50;
     padding: 15px;
@@ -96,17 +96,17 @@ h2::before {
     clear: both;
 }
 
-/* --- ЛАБОРАТОРНА 7: СТИЛІ ДЛЯ ПОДІЙ --- */
+/* Лр 7: СТИЛІ ДЛЯ ПОДІЙ */
 .highlight {
     background-color: #f1c40f;
     font-weight: bold;
     color: #2c3e50 !important; /* Важливо, щоб перебити старі стилі */
     padding: 2px 5px;
     border-radius: 3px;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; 
 }
 
-/* --- ЛАБОРАТОРНА 8: СТИЛІ ДЛЯ ПОДІЙ МИШІ --- */
+/* Лр 8: СТИЛІ ДЛЯ ПОДІЙ МИШІ */
 .hover-item {
     transition: all 0.3s ease;
     cursor: pointer;

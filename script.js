@@ -1,4 +1,3 @@
-/* --- ЛАБОРАТОРНА 6: ЗОВНІШНІЙ СКРИПТ --- */
 function startUserDialogue() {
     let userName = prompt("Вітаємо на порталі! Як до вас звертатися?", "Гравець");
     if (userName !== null && userName !== "") {
@@ -52,14 +51,14 @@ function redirectToProject() {
     }
 }
 
-// Завдання 1 (Лаб 7)
+
 function attrHandler() {
     alert("Спрацював обробник події миші, призначений через атрибут onclick!");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     
-    // --- ЛАБОРАТОРНА 7 ---
+
     const propBtn = document.getElementById("prop-btn");
     if (propBtn) {
         propBtn.onclick = function() {
@@ -132,9 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // --- ЛАБОРАТОРНА 8: ПОДІЇ МИШІ ТА DRAG-AND-DROP ---
 
-    // 1. Події mouseover, mouseout та використання relatedTarget
     const hoverZone = document.getElementById("hover-zone");
     const hoverInfo = document.getElementById("hover-info");
 
@@ -143,7 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
             let target = event.target;
             let relatedTarget = event.relatedTarget;
             
-            // Якщо навели мишу на елемент з класом hover-item
             if (target.classList.contains("hover-item")) {
                 target.style.transform = "scale(1.1)";
                 target.style.backgroundColor = "#f1c40f";
@@ -157,10 +153,10 @@ document.addEventListener("DOMContentLoaded", () => {
             let target = event.target;
             let relatedTarget = event.relatedTarget;
 
-            // Якщо миша покинула елемент з класом hover-item
+
             if (target.classList.contains("hover-item")) {
                 target.style.transform = "";
-                target.style.backgroundColor = ""; // Повертаємо стилі
+                target.style.backgroundColor = ""; 
                 
                 let toTag = relatedTarget ? relatedTarget.tagName : 'за межі зони';
                 hoverInfo.innerText = `Вказівник миші ПОКИНУВ: ${target.tagName} (перейшов на ${toTag})`;
@@ -169,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 2. Drag-and-Drop (mousedown, mousemove, mouseup)
-    const dragItem = document.getElementById("drag-item");
+    const dragItem = document.getElementById("drag-item"); 
 
     if (dragItem) {
         dragItem.onmousedown = function(event) {
@@ -212,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Вимикаємо вбудований браузерний механізм drag-and-drop, щоб уникнути конфліктів
         dragItem.ondragstart = function() {
-            return false;
+            return false; 
         };
     }
 
