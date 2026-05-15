@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (dragItem) {
         dragItem.onmousedown = function(event) {
             // Запобігаємо стандартному виділенню тексту
-            event.preventDefault(); 
+            event.preventDefault(); // Відключаємо вбудований механізм перетягування браузера
             
             // Отримуємо координати курсору відносно елемента, щоб захопити його за те місце, де клікнули
             let shiftX = event.clientX - dragItem.getBoundingClientRect().left;
